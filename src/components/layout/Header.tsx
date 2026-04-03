@@ -47,11 +47,9 @@ const Header = () => {
         </button>
 
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <span className="font-heading text-xl md:text-2xl font-bold tracking-tight text-foreground">
-            Ali Gök <span className="text-gradient">Fındık</span>
-          </span>
-        </Link>
+         <Link to="/" className="flex items-center gap-2">
+           <img src={logoImg} alt="Ali Gök Fındık" className="h-10 md:h-12 w-auto" />
+         </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">

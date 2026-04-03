@@ -11,9 +11,9 @@ const Footer = () => {
             <h3 className="font-heading text-2xl font-bold">
               Ali Gök <span className="text-gold">Fındık</span>
             </h3>
-            <p className="text-sm text-primary-foreground/60 leading-relaxed">
-              1956'dan günümüze, Karadeniz'in en seçkin fındıklarını özenle işliyor, doğal lezzeti sofralarınıza taşıyoruz.
-            </p>
+             <p className="text-sm text-primary-foreground/60 leading-relaxed">
+               1956'dan günümüze, Karadeniz'in en seçkin fındıklarını özenle işliyor, doğal lezzeti sofralarınıza taşıyoruz.
+             </p>
             <div className="flex gap-3 pt-2">
               <a href="#" className="w-9 h-9 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors text-sm font-bold" aria-label="Instagram">
                 IG
