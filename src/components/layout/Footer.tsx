@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <h3 className="font-heading text-2xl font-bold">
-              Demirci <span className="text-gold">Fındık</span>
+              Ali Gök <span className="text-gold">Fındık</span>
             </h3>
             <p className="text-sm text-primary-foreground/60 leading-relaxed">
               1956'dan günümüze, Karadeniz'in en seçkin fındıklarını özenle işliyor, doğal lezzeti sofralarınıza taşıyoruz.
