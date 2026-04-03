@@ -10,9 +10,9 @@ const UtilityBar = () => {
             <Phone className="w-3 h-3" />
             <span>0500 123 45 67</span>
           </a>
-          <a href="mailto:info@demircifindik.com" className="flex items-center gap-1.5 hover:text-primary-foreground transition-colors">
-            <Mail className="w-3 h-3" />
-            <span>info@demircifindik.com</span>
+           <a href="mailto:info@aligokfindik.com" className="flex items-center gap-1.5 hover:text-primary-foreground transition-colors">
+             <Mail className="w-3 h-3" />
+             <span>info@aligokfindik.com</span>
           </a>
         </div>
         <div className="flex items-center gap-4 text-primary-foreground/80">

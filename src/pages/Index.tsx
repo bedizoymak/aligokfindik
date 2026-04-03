@@ -174,7 +174,7 @@ const Index = () => {
             <motion.div {...fadeUp}>
               <img
                 src={productionImg}
-                alt="Demirci Fındık üretim tesisi"
+                alt="Ali Gök Fındık üretim tesisi"
                 loading="lazy"
                 width={1200}
                 height={800}
@@ -188,9 +188,9 @@ const Index = () => {
                 <span className="italic text-hazelnut">Lezzet Geleneği</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Demirci Fındık, 1956 yılında Giresun'da küçük bir aile işletmesi olarak kurulmuştur. 
-                Üç nesil boyunca sürdürdüğümüz geleneksel üretim anlayışı ve kalite tutkusu, 
-                bugün Türkiye'nin en güvenilir fındık markalarından biri olmamızı sağlamıştır.
+                 Ali Gök Fındık, 1956 yılında Giresun'da küçük bir aile işletmesi olarak kurulmuştur. 
+                 Üç nesil boyunca sürdürdüğümüz geleneksel üretim anlayışı ve kalite tutkusu, 
+                 bugün Türkiye'nin en güvenilir fındık markalarından biri olmamızı sağlamıştır.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Her bir fındık tanesi özenle seçilir, geleneksel yöntemlerle işlenir ve 
@@ -213,7 +213,7 @@ const Index = () => {
         <div className="container">
           <motion.div {...fadeUp} className="text-center mb-12">
             <h2 className="font-heading text-3xl md:text-4xl font-bold">
-              Neden Demirci Fındık?
+              Neden Ali Gök Fındık?
             </h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

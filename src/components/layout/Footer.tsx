@@ -9,11 +9,11 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <h3 className="font-heading text-2xl font-bold">
-              Demirci <span className="text-gold">Fındık</span>
+              Ali Gök <span className="text-gold">Fındık</span>
             </h3>
-            <p className="text-sm text-primary-foreground/60 leading-relaxed">
-              1956'dan günümüze, Karadeniz'in en seçkin fındıklarını özenle işliyor, doğal lezzeti sofralarınıza taşıyoruz.
-            </p>
+             <p className="text-sm text-primary-foreground/60 leading-relaxed">
+               1956'dan günümüze, Karadeniz'in en seçkin fındıklarını özenle işliyor, doğal lezzeti sofralarınıza taşıyoruz.
+             </p>
             <div className="flex gap-3 pt-2">
               <a href="#" className="w-9 h-9 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors text-sm font-bold" aria-label="Instagram">
                 IG
@@ -83,9 +83,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@demircifindik.com" className="flex items-center gap-3 text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">
-                  <Mail className="w-4 h-4 shrink-0" />
-                  <span>info@demircifindik.com</span>
+                 <a href="mailto:info@aligokfindik.com" className="flex items-center gap-3 text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+                   <Mail className="w-4 h-4 shrink-0" />
+                   <span>info@aligokfindik.com</span>
                 </a>
               </li>
             </ul>
@@ -94,7 +94,7 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-primary-foreground/40">
-          <p>© 2024 Demirci Fındık. Tüm hakları saklıdır.</p>
+          <p>© 2026 Ali Gök Fındık. Tüm hakları saklıdır.</p>
           <div className="flex gap-4">
             <Link to="/gizlilik" className="hover:text-primary-foreground/60 transition-colors">Gizlilik Politikası</Link>
             <Link to="/kullanim-kosullari" className="hover:text-primary-foreground/60 transition-colors">Kullanım Koşulları</Link>
