@@ -174,7 +174,7 @@ const Index = () => {
             <motion.div {...fadeUp}>
               <img
                 src={productionImg}
-                alt="Demirci Fındık üretim tesisi"
+                alt="Ali Gök Fındık üretim tesisi"
                 loading="lazy"
                 width={1200}
                 height={800}
