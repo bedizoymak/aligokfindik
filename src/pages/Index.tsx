@@ -188,9 +188,9 @@ const Index = () => {
                 <span className="italic text-hazelnut">Lezzet Geleneği</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Demirci Fındık, 1956 yılında Giresun'da küçük bir aile işletmesi olarak kurulmuştur. 
-                Üç nesil boyunca sürdürdüğümüz geleneksel üretim anlayışı ve kalite tutkusu, 
-                bugün Türkiye'nin en güvenilir fındık markalarından biri olmamızı sağlamıştır.
+                 Ali Gök Fındık, 1956 yılında Giresun'da küçük bir aile işletmesi olarak kurulmuştur. 
+                 Üç nesil boyunca sürdürdüğümüz geleneksel üretim anlayışı ve kalite tutkusu, 
+                 bugün Türkiye'nin en güvenilir fındık markalarından biri olmamızı sağlamıştır.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Her bir fındık tanesi özenle seçilir, geleneksel yöntemlerle işlenir ve 
