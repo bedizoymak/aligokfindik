@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Search, Heart, ShoppingBag, User, Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoImg from "@/assets/logo.png";
 
 const navItems = [
   { label: "Anasayfa", href: "/" },
