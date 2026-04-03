@@ -15,14 +15,14 @@ const Footer = () => {
               1956'dan günümüze, Karadeniz'in en seçkin fındıklarını özenle işliyor, doğal lezzeti sofralarınıza taşıyoruz.
             </p>
             <div className="flex gap-3 pt-2">
-              <a href="#" className="w-9 h-9 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors" aria-label="Instagram">
-                <Instagram className="w-4 h-4" />
+              <a href="#" className="w-9 h-9 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors text-sm font-bold" aria-label="Instagram">
+                IG
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors" aria-label="Facebook">
-                <Facebook className="w-4 h-4" />
+              <a href="#" className="w-9 h-9 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors text-sm font-bold" aria-label="Facebook">
+                FB
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors" aria-label="Twitter">
-                <Twitter className="w-4 h-4" />
+              <a href="#" className="w-9 h-9 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors text-sm font-bold" aria-label="Twitter">
+                X
               </a>
             </div>
           </div>
