@@ -48,7 +48,7 @@ const Header = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <span className="font-heading text-xl md:text-2xl font-bold tracking-tight text-foreground">
-            Demirci <span className="text-gradient">Fındık</span>
+            Ali Gök <span className="text-gradient">Fındık</span>
           </span>
         </Link>
 

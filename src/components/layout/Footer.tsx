@@ -94,7 +94,7 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-primary-foreground/40">
-          <p>© 2024 Demirci Fındık. Tüm hakları saklıdır.</p>
+          <p>© 2026 Ali Gök Fındık. Tüm hakları saklıdır.</p>
           <div className="flex gap-4">
             <Link to="/gizlilik" className="hover:text-primary-foreground/60 transition-colors">Gizlilik Politikası</Link>
             <Link to="/kullanim-kosullari" className="hover:text-primary-foreground/60 transition-colors">Kullanım Koşulları</Link>

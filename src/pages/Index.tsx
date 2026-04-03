@@ -213,7 +213,7 @@ const Index = () => {
         <div className="container">
           <motion.div {...fadeUp} className="text-center mb-12">
             <h2 className="font-heading text-3xl md:text-4xl font-bold">
-              Neden Demirci Fındık?
+              Neden Ali Gök Fındık?
             </h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
