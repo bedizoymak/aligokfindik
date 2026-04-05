@@ -26,6 +26,7 @@ const navItems = [
       { label: "Üretim Tesisimiz", href: "/uretim" },
     ],
   },
+  { label: "SSS", href: "/sss" },
   { label: "İletişim", href: "/iletisim" },
 ];
 
@@ -37,7 +38,6 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16 md:h-20">
-        {/* Mobile menu toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden p-2 -ml-2 text-foreground"
@@ -46,12 +46,10 @@ const Header = () => {
           {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
 
-        {/* Logo */}
-         <Link to="/" className="flex items-center gap-2">
-           <img src={logoImg} alt="Ali Gök Fındık" className="h-10 md:h-12 w-auto" />
-         </Link>
+        <Link to="/" className="flex items-center gap-2">
+          <img src={logoImg} alt="Gök Fındık" className="h-10 md:h-12 w-auto" />
+        </Link>
 
-        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
             <div
@@ -94,7 +92,6 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Actions */}
         <div className="flex items-center gap-1 md:gap-2">
           <button
             onClick={() => setSearchOpen(!searchOpen)}
@@ -103,25 +100,13 @@ const Header = () => {
           >
             <Search className="w-5 h-5" />
           </button>
-          <Link
-            to="/hesap"
-            className="hidden md:flex p-2.5 rounded-full text-foreground/70 hover:text-foreground hover:bg-muted transition-colors"
-            aria-label="Hesabım"
-          >
+          <Link to="/hesap" className="hidden md:flex p-2.5 rounded-full text-foreground/70 hover:text-foreground hover:bg-muted transition-colors" aria-label="Hesabım">
             <User className="w-5 h-5" />
           </Link>
-          <Link
-            to="/favoriler"
-            className="hidden md:flex p-2.5 rounded-full text-foreground/70 hover:text-foreground hover:bg-muted transition-colors"
-            aria-label="Favoriler"
-          >
+          <Link to="/favoriler" className="hidden md:flex p-2.5 rounded-full text-foreground/70 hover:text-foreground hover:bg-muted transition-colors" aria-label="Favoriler">
             <Heart className="w-5 h-5" />
           </Link>
-          <Link
-            to="/sepet"
-            className="relative p-2.5 rounded-full text-foreground/70 hover:text-foreground hover:bg-muted transition-colors"
-            aria-label="Sepet"
-          >
+          <Link to="/sepet" className="relative p-2.5 rounded-full text-foreground/70 hover:text-foreground hover:bg-muted transition-colors" aria-label="Sepet">
             <ShoppingBag className="w-5 h-5" />
             <span className="absolute -top-0.5 -right-0.5 w-4.5 h-4.5 bg-primary text-primary-foreground text-[10px] font-bold rounded-full flex items-center justify-center">
               0
@@ -130,7 +115,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Search overlay */}
       <AnimatePresence>
         {searchOpen && (
           <motion.div
@@ -154,7 +138,6 @@ const Header = () => {
         )}
       </AnimatePresence>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -190,18 +173,10 @@ const Header = () => {
                 </div>
               ))}
               <div className="pt-3 border-t border-border flex gap-2">
-                <Link
-                  to="/hesap"
-                  onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground"
-                >
+                <Link to="/hesap" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground">
                   <User className="w-4 h-4" /> Hesabım
                 </Link>
-                <Link
-                  to="/favoriler"
-                  onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground"
-                >
+                <Link to="/favoriler" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground">
                   <Heart className="w-4 h-4" /> Favoriler
                 </Link>
               </div>
