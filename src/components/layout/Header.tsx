@@ -134,7 +134,7 @@ const Header = () => {
                 </div>
               ))}
               <div className="pt-3 border-t border-border flex gap-2">
-                <Link to="/hesak" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground">
+                <Link to="/hesap" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground">
                   <User className="w-4 h-4" /> Hesabım
                 </Link>
                 <Link to="/favoriler" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground">
