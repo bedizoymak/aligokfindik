@@ -5,6 +5,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CartProvider } from "@/contexts/CartContext";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { LanguageProvider } from "@/i18n/LanguageContext";
+import CargoTrackingPage from "./pages/CargoTrackingPage.tsx";
+import LegalPage from "./pages/LegalPage.tsx";
 import Index from "./pages/Index.tsx";
 import CategoryPage from "./pages/CategoryPage.tsx";
 import ProductDetailPage from "./pages/ProductDetailPage.tsx";
@@ -27,6 +30,7 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <LanguageProvider>
       <AuthProvider>
         <CartProvider>
           <Toaster />
@@ -49,11 +53,16 @@ const App = () => (
               <Route path="/hesap" element={<AccountPage />} />
               <Route path="/odeme" element={<CheckoutPage />} />
               <Route path="/siparis-basarili" element={<OrderSuccessPage />} />
+              <Route path="/kargo-takip" element={<CargoTrackingPage />} />
+              <Route path="/gizlilik" element={<LegalPage variant="privacy" />} />
+              <Route path="/kullanim-kosullari" element={<LegalPage variant="terms" />} />
+              <Route path="/kvkk" element={<LegalPage variant="kvkk" />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
         </CartProvider>
       </AuthProvider>
+      </LanguageProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
