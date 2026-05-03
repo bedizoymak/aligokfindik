@@ -1,7 +1,10 @@
-import { Phone, Mail, HelpCircle } from "lucide-react";
+import { Phone, Mail, HelpCircle, Truck } from "lucide-react";
 import { Link } from "react-router-dom";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useLang } from "@/i18n/LanguageContext";
 
 const UtilityBar = () => {
+  const { t } = useLang();
   return (
     <div className="hidden md:block bg-espresso">
       <div className="container flex items-center justify-between py-2 text-xs tracking-wide">
@@ -16,12 +19,20 @@ const UtilityBar = () => {
           </a>
         </div>
         <div className="flex items-center gap-4 text-primary-foreground/80">
+          <Link to="/kargo-takip" className="flex items-center gap-1.5 hover:text-primary-foreground transition-colors">
+            <Truck className="w-3 h-3" />
+            <span>{t("nav.tracking")}</span>
+          </Link>
           <Link to="/sss" className="flex items-center gap-1.5 hover:text-primary-foreground transition-colors">
             <HelpCircle className="w-3 h-3" />
-            <span>Sıkça Sorulan Sorular</span>
+            <span>{t("util.faq")}</span>
           </Link>
           <span className="text-primary-foreground/40">|</span>
-          <Link to="/iletisim" className="hover:text-primary-foreground transition-colors">İletişim</Link>
+          <Link to="/iletisim" className="hover:text-primary-foreground transition-colors">{t("util.contact")}</Link>
+          <span className="text-primary-foreground/40">|</span>
+          <div className="text-primary-foreground">
+            <LanguageSwitcher compact />
+          </div>
         </div>
       </div>
     </div>
@@ -29,3 +40,4 @@ const UtilityBar = () => {
 };
 
 export default UtilityBar;
+
