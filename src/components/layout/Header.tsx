@@ -5,44 +5,47 @@ import { motion, AnimatePresence } from "framer-motion";
 import logoImg from "@/assets/logo.png";
 import { useCart } from "@/contexts/CartContext";
 import { useAuth } from "@/contexts/AuthContext";
-
-const navItems = [
-  { label: "Anasayfa", href: "/" },
-  {
-    label: "Ürünler",
-    href: "/kategori",
-    children: [
-      { label: "Fındık", href: "/kategori/findik" },
-      { label: "Atıştırmalık", href: "/kategori/atistirmalik" },
-      { label: "Fındık Ezmesi", href: "/kategori/findik-ezmesi" },
-      { label: "Fındık Kreması", href: "/kategori/findik-kremasi" },
-      { label: "Pastacılık", href: "/kategori/pastacilik" },
-      { label: "Hediyelik", href: "/kategori/hediyelik" },
-    ],
-  },
-  {
-    label: "Kurumsal",
-    href: "/hakkimizda",
-    children: [
-      { label: "Hakkımızda", href: "/hakkimizda" },
-      { label: "Üretim Tesisimiz", href: "/uretim" },
-    ],
-  },
-  { label: "SSS", href: "/sss" },
-  { label: "İletişim", href: "/iletisim" },
-];
+import { useLang } from "@/i18n/LanguageContext";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [searchOpen, setSearchOpen] = useState(false);
   const { totalItems } = useCart();
-  const { favorites } = useAuth();
+  const { favorites, isLoggedIn } = useAuth();
+  const { t } = useLang();
+
+  const navItems = [
+    { label: t("nav.home"), href: "/" },
+    {
+      label: t("nav.products"),
+      href: "/kategori",
+      children: [
+        { label: t("cat.findik"), href: "/kategori/findik" },
+        { label: t("cat.atistirmalik"), href: "/kategori/atistirmalik" },
+        { label: t("cat.findik-ezmesi"), href: "/kategori/findik-ezmesi" },
+        { label: t("cat.findik-kremasi"), href: "/kategori/findik-kremasi" },
+        { label: t("cat.pastacilik"), href: "/kategori/pastacilik" },
+        { label: t("cat.hediyelik"), href: "/kategori/hediyelik" },
+      ],
+    },
+    {
+      label: t("nav.corporate"),
+      href: "/hakkimizda",
+      children: [
+        { label: t("nav.about"), href: "/hakkimizda" },
+        { label: t("nav.production"), href: "/uretim" },
+      ],
+    },
+    { label: t("nav.faq"), href: "/sss" },
+    { label: t("nav.contact"), href: "/iletisim" },
+  ];
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden p-2 -ml-2 text-foreground" aria-label="Menü">
+        <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden p-2 -ml-2 text-foreground" aria-label={t("nav.menu")}>
           {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
 
@@ -50,7 +53,7 @@ const Header = () => {
           <img src={logoImg} alt="Gök Fındık" className="h-10 md:h-12 w-auto" />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-7">
           {navItems.map((item) => (
             <div key={item.label} className="relative" onMouseEnter={() => item.children && setActiveDropdown(item.label)} onMouseLeave={() => setActiveDropdown(null)}>
               <Link to={item.href} className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-foreground transition-colors py-2">
@@ -75,13 +78,16 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-1 md:gap-2">
-          <button onClick={() => setSearchOpen(!searchOpen)} className="p-2.5 rounded-full text-foreground/70 hover:text-foreground hover:bg-muted transition-colors" aria-label="Ara">
+          <div className="md:hidden">
+            <LanguageSwitcher compact />
+          </div>
+          <button onClick={() => setSearchOpen(!searchOpen)} className="p-2.5 rounded-full text-foreground/70 hover:text-foreground hover:bg-muted transition-colors" aria-label={t("nav.search")}>
             <Search className="w-5 h-5" />
           </button>
-          <Link to="/hesap" className="hidden md:flex p-2.5 rounded-full text-foreground/70 hover:text-foreground hover:bg-muted transition-colors" aria-label="Hesabım">
+          <Link to={isLoggedIn ? "/hesap" : "/giris"} className="hidden md:flex p-2.5 rounded-full text-foreground/70 hover:text-foreground hover:bg-muted transition-colors" aria-label={t("nav.account")}>
             <User className="w-5 h-5" />
           </Link>
-          <Link to="/favoriler" className="hidden md:flex p-2.5 rounded-full text-foreground/70 hover:text-foreground hover:bg-muted transition-colors relative" aria-label="Favoriler">
+          <Link to="/favoriler" className="hidden md:flex p-2.5 rounded-full text-foreground/70 hover:text-foreground hover:bg-muted transition-colors relative" aria-label={t("nav.favorites")}>
             <Heart className="w-5 h-5" />
             {favorites.length > 0 && (
               <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-destructive text-destructive-foreground text-[10px] font-bold rounded-full flex items-center justify-center">
@@ -89,7 +95,7 @@ const Header = () => {
               </span>
             )}
           </Link>
-          <Link to="/sepet" className="relative p-2.5 rounded-full text-foreground/70 hover:text-foreground hover:bg-muted transition-colors" aria-label="Sepet">
+          <Link to="/sepet" className="relative p-2.5 rounded-full text-foreground/70 hover:text-foreground hover:bg-muted transition-colors" aria-label={t("nav.cart")}>
             <ShoppingBag className="w-5 h-5" />
             {totalItems > 0 && (
               <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-primary text-primary-foreground text-[10px] font-bold rounded-full flex items-center justify-center">
@@ -106,7 +112,7 @@ const Header = () => {
             <div className="container py-4">
               <div className="relative max-w-xl mx-auto">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                <input type="text" placeholder="Ürün ara..." autoFocus className="w-full pl-12 pr-4 py-3 rounded-full bg-muted border-0 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20" />
+                <input type="text" placeholder={t("nav.search")} autoFocus className="w-full pl-12 pr-4 py-3 rounded-full bg-muted border-0 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20" />
               </div>
             </div>
           </motion.div>
@@ -134,11 +140,11 @@ const Header = () => {
                 </div>
               ))}
               <div className="pt-3 border-t border-border flex gap-2">
-                <Link to="/hesap" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground">
-                  <User className="w-4 h-4" /> Hesabım
+                <Link to={isLoggedIn ? "/hesap" : "/giris"} onClick={() => setMobileOpen(false)} className="flex items-center gap-2 px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground">
+                  <User className="w-4 h-4" /> {t("nav.account")}
                 </Link>
                 <Link to="/favoriler" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground">
-                  <Heart className="w-4 h-4" /> Favoriler
+                  <Heart className="w-4 h-4" /> {t("nav.favorites")}
                 </Link>
               </div>
             </nav>
